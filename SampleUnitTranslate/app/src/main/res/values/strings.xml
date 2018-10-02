@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Sample Unit Transfer</string>
+    <string name="Digit_Title">Set digit</string>
+    <string name="Digit_Summary">Choose how many digit to keep after the calculate.</string>
+    <string-array name="Digit">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>Show as much as possible.</item>
+    </string-array>
+    <string-array name="Type">
+        <item>Length</item>
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Speed</item>
+        <item>Temperature</item>
+        <item>Energy</item>
+    </string-array>
+    <string-array name="Length">
+        <item>m</item>
+        <item>km</item>
+        <item>dm</item>
+        <item>cm</item>
+        <item>mm</item>
+        <item>µm</item>
+        <item>nm</item>
+        <item>in</item>
+        <item>mi</item>
+        <item>ft</item>
+        <item>yd</item>
+    </string-array>
+    <string-array name="Area">
+        <item>m²</item>
+        <item>km²</item>
+        <item>dm²</item>
+        <item>cm²</item>
+        <item>in²</item>
+        <item>ft²</item>
+        <item>yd²</item>
+        <item>ha</item>
+    </string-array>
+    <string-array name="Volume">
+        <item>m³</item>
+        <item>l(dm³)</item>
+        <item>cm³</item>
+        <item>mm³</item>
+        <item>us gal</item>
+        <item>us oz</item>
+    </string-array>
+    <string-array name="Speed">
+        <item>m/s</item>
+        <item>km/h</item>
+        <item>km/s</item>
+        <item>mach</item>
+        <item>in/s</item>
+        <item>mile/h</item>
+    </string-array>
+    <string-array name="Temperature">
+        <item>K</item>
+        <item>°C</item>
+        <item>°F</item>
+        <item>°R</item>
+    </string-array>
+    <string-array name="Energy">
+        <item>J</item>
+        <item>kJ</item>
+        <item>cal</item>
+        <item>kcal</item>
+        <item>kWh</item>
+    </string-array>
+</resources>

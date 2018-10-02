@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.songkaiyu.termproject.EnergyActivity">
+
+
+    <TextView
+        android:id="@+id/From"
+        android:layout_width="120dp"
+        android:layout_height="39dp"
+        android:text="Unit From"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintRight_toLeftOf="@+id/To"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/UnitFrom"
+        app:layout_constraintTop_toBottomOf="@+id/Note" />
+
+    <TextView
+        android:id="@+id/To"
+        android:layout_width="120dp"
+        android:layout_height="39dp"
+        android:text="Unit To"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/From"
+        app:layout_constraintBottom_toTopOf="@+id/UnitTo"
+        app:layout_constraintTop_toBottomOf="@+id/Note" />
+
+    <Spinner
+        android:id="@+id/UnitFrom"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:entries="@array/Energy"
+        app:layout_constraintRight_toLeftOf="@+id/UnitTo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/Value"
+        app:layout_constraintTop_toBottomOf="@+id/From" />
+
+    <Spinner
+        android:id="@+id/UnitTo"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:entries="@array/Energy"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/UnitFrom"
+        app:layout_constraintBottom_toTopOf="@+id/Value"
+        app:layout_constraintTop_toBottomOf="@+id/To" />
+
+    <EditText
+        android:id="@+id/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintBottom_toTopOf="@+id/Result"
+        app:layout_constraintTop_toBottomOf="@+id/UnitFrom" />
+
+    <TextView
+        android:id="@+id/Result"
+        android:layout_width="146dp"
+        android:layout_height="41dp"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/Do"
+        app:layout_constraintTop_toBottomOf="@+id/Value" />
+
+    <Button
+        android:id="@+id/Do"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        app:layout_constraintRight_toLeftOf="@+id/Save"
+        app:layout_constraintLeft_toRightOf="@+id/Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Result" />
+
+    <Button
+        android:id="@+id/Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SaveData"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/Do"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Result" />
+
+    <Button
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintRight_toLeftOf="@+id/Do"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Result"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/Note"
+        android:layout_width="344dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Energy Transfer"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/From"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

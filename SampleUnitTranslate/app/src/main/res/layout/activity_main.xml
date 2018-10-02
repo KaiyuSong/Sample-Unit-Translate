@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/Volume"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/volume"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+
+        <ImageButton
+            android:id="@+id/Length"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@+id/Volume"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/length" />
+
+        <ImageButton
+            android:id="@+id/Temperature"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Volume"
+            app:srcCompat="@drawable/temperature" />
+
+        <ImageButton
+            android:id="@+id/Speed"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/speed"
+            android:layout_marginRight="32dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+
+        <ImageButton
+            android:id="@+id/Area"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/area"
+            android:layout_marginRight="32dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/Speed" />
+
+        <ImageButton
+            android:id="@+id/Energy"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/energy"
+            android:layout_marginRight="32dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/Speed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/VolumeNote"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="0dp"
+            android:text="Volume"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Volume" />
+
+        <TextView
+            android:id="@+id/TemperatureNote"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="0dp"
+            android:text="Temperature"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Temperature" />
+
+        <TextView
+            android:id="@+id/SpeedNote"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="0dp"
+            android:text="Speed"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Speed" />
+
+        <TextView
+            android:id="@+id/EnergyNote"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="0dp"
+            android:text="Energy"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Energy" />
+
+        <TextView
+            android:id="@+id/LengthNote"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="0dp"
+            android:text="Length"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Length" />
+
+        <TextView
+            android:id="@+id/AreaNote"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="0dp"
+            android:text="Area"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Area" />
+    </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

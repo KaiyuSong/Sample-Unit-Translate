@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.songkaiyu.termproject.ShowActivity">
+
+    <TextView
+        android:id="@+id/ChooseNote"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:text="Choose Unit You Want:"
+        android:textSize="14sp"
+        app:layout_constraintRight_toLeftOf="@+id/TypeSelect"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/DataList" />
+
+    <Spinner
+        android:id="@+id/TypeSelect"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:entries="@array/Type"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ChooseNote"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/DataList" />
+
+    <ListView
+        android:id="@+id/DataList"
+        android:layout_width="0dp"
+        android:layout_height="357dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/BH"
+        app:layout_constraintTop_toBottomOf="@+id/ChooseNote" />
+
+    <Button
+        android:id="@+id/BH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back To Main Page"
+        app:layout_constraintRight_toLeftOf="@+id/BE"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DataList" />
+
+    <Button
+        android:id="@+id/BE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back To Ex Page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/BH"
+        app:layout_constraintTop_toBottomOf="@+id/DataList" />
+</android.support.constraint.ConstraintLayout>
