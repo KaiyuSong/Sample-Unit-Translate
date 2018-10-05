@@ -27,7 +27,7 @@ public class SpeedActivity extends AppCompatActivity implements View.OnClickList
     TextView output;
     int digit = 2;
     String result;
-    int fromunit, tounit;
+    int from_unit, to_unit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class SpeedActivity extends AppCompatActivity implements View.OnClickList
         Calculate.setOnClickListener(this);
         Save.setOnClickListener(this);
         Back.setOnClickListener(this);
-        fromunit = tounit = 0;
+        from_unit = to_unit = 0;
         result = "0.0";
         if(savedInstanceState!=null){
             result = savedInstanceState.getString("result");
@@ -113,8 +113,8 @@ public class SpeedActivity extends AppCompatActivity implements View.OnClickList
     public void Calculate(){
         try {
             double value = Double.parseDouble(input.getText().toString());
-            if (fromunit!=tounit){
-                value = (value/Value[fromunit])*Value[tounit];
+            if (from_unit != to_unit){
+                value = (value/Value[from_unit])*Value[to_unit];
                 if(Digit(value)==0){
                     Toast.makeText(this,"Try keep more digit.",Toast.LENGTH_LONG).show();
                 }
@@ -140,11 +140,11 @@ public class SpeedActivity extends AppCompatActivity implements View.OnClickList
         Spinner spinner = (Spinner) adapterView;
         if(spinner.getId() == R.id.UnitFrom)
         {
-            fromunit = i;
+            from_unit = i;
         }
         else if(spinner.getId() == R.id.UnitTo)
         {
-            tounit = i;
+            to_unit = i;
         }
     }
 
@@ -155,18 +155,18 @@ public class SpeedActivity extends AppCompatActivity implements View.OnClickList
 
     public void SaveData(){
 
-        String function = input.getText().toString() + " " + Unit[fromunit] + " = " + result + " " + Unit[tounit];
+        String function = input.getText().toString() + " " + Unit[from_unit] + " = " + result + " " + Unit[to_unit];
 
         if(GetData(function).getCount()==0) {
 
-            UnitTrandsferSQLiteHelper helper = new UnitTrandsferSQLiteHelper(this);
+            UnitTransferSQLiteHelper helper = new UnitTransferSQLiteHelper(this);
             SQLiteDatabase db = helper.getWritableDatabase();
 
             ContentValues cv = new ContentValues();
 
-            cv.put(UnitTrandsferSQLiteHelper.TYPE, "Speed");
-            cv.put(UnitTrandsferSQLiteHelper.FUNCTION, function);
-            db.insert(UnitTrandsferSQLiteHelper.TITLE, null, cv);
+            cv.put(UnitTransferSQLiteHelper.TYPE, "Speed");
+            cv.put(UnitTransferSQLiteHelper.FUNCTION, function);
+            db.insert(UnitTransferSQLiteHelper.TITLE, null, cv);
 
             db.close();
         }else{
@@ -175,7 +175,7 @@ public class SpeedActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public Cursor GetData(String key) {
-        UnitTrandsferSQLiteHelper helper = new UnitTrandsferSQLiteHelper(this);
+        UnitTransferSQLiteHelper helper = new UnitTransferSQLiteHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
 
         String query = "SELECT * FROM UTransfer WHERE FUNCTION = ?";

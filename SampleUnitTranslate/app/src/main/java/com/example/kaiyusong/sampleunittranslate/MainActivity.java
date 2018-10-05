@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent2);
                 break;
             case R.id.Volume:
-                Intent intent3 = new Intent(this, VolumActivity.class);
+                Intent intent3 = new Intent(this, VolumeActivity.class);
                 intent3.putExtra("di", digit);
                 startActivity(intent3);
                 break;

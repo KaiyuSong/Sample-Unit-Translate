@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-class UnitTrandsferSQLiteHelper extends SQLiteOpenHelper {
+class UnitTransferSQLiteHelper extends SQLiteOpenHelper {
 
     private static final String  DB_NAME = "UnitTransfer.db";
     private static final int DB_VERSION = 1;
@@ -14,7 +14,7 @@ class UnitTrandsferSQLiteHelper extends SQLiteOpenHelper {
     static final String TYPE = "type";
     static final String FUNCTION = "FUNCTION";
 
-    UnitTrandsferSQLiteHelper(Context context) {
+    UnitTransferSQLiteHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 

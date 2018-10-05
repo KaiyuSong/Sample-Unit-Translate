@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".LengthActivity" />
         <activity android:name=".AreaActivity" />
-        <activity android:name=".VolumActivity" />
+        <activity android:name=".VolumeActivity" />
         <activity android:name=".SpeedActivity" />
         <activity android:name=".EnergyActivity" />
         <activity android:name=".AboutActivity" />

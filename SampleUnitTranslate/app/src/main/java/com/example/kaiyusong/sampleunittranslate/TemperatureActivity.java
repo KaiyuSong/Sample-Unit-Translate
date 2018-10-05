@@ -24,7 +24,7 @@ public class TemperatureActivity extends AppCompatActivity implements View.OnCli
     TextView output;
     int digit = 2;
     String result;
-    String fromunit, tounit;
+    String from_unit, to_unit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class TemperatureActivity extends AppCompatActivity implements View.OnCli
         Calculate.setOnClickListener(this);
         Save.setOnClickListener(this);
         Back.setOnClickListener(this);
-        fromunit = tounit = "mi";
+        from_unit = to_unit = "mi";
         result = "0.0";
         if(savedInstanceState!=null){
             result = savedInstanceState.getString("result");
@@ -120,7 +120,7 @@ public class TemperatureActivity extends AppCompatActivity implements View.OnCli
 
     public double TemretureMath(double value){
         double key = 0.5555555555555555556;
-        switch (fromunit){
+        switch (from_unit){
             case "K":
                 break;
             case "°C":
@@ -133,7 +133,7 @@ public class TemperatureActivity extends AppCompatActivity implements View.OnCli
                 value = value*key ;
                 break;
         }
-        switch (tounit){
+        switch (to_unit){
             case "K":
                 break;
             case "°C":
@@ -165,16 +165,16 @@ public class TemperatureActivity extends AppCompatActivity implements View.OnCli
         {
             switch (i){
                 case 0:
-                    fromunit = "K";
+                    from_unit = "K";
                     break;
                 case 1:
-                    fromunit = "°C";
+                    from_unit = "°C";
                     break;
                 case 2:
-                    fromunit = "°F";
+                    from_unit = "°F";
                     break;
                 case 3:
-                    fromunit = "°R";
+                    from_unit = "°R";
                     break;
             }
         }
@@ -182,16 +182,16 @@ public class TemperatureActivity extends AppCompatActivity implements View.OnCli
         {
             switch (i){
                 case 0:
-                    tounit = "K";
+                    to_unit = "K";
                     break;
                 case 1:
-                    tounit = "°C";
+                    to_unit = "°C";
                     break;
                 case 2:
-                    tounit = "°F";
+                    to_unit = "°F";
                     break;
                 case 3:
-                    tounit = "°R";
+                    to_unit = "°R";
                     break;
             }
         }
@@ -204,18 +204,18 @@ public class TemperatureActivity extends AppCompatActivity implements View.OnCli
 
     public void SaveData(){
 
-        String function = input.getText().toString() + " " + fromunit + " = " + result + " " + tounit;
+        String function = input.getText().toString() + " " + from_unit + " = " + result + " " + to_unit;
 
         if(GetData(function).getCount()==0) {
 
-            UnitTrandsferSQLiteHelper helper = new UnitTrandsferSQLiteHelper(this);
+            UnitTransferSQLiteHelper helper = new UnitTransferSQLiteHelper(this);
             SQLiteDatabase db = helper.getWritableDatabase();
 
             ContentValues cv = new ContentValues();
 
-            cv.put(UnitTrandsferSQLiteHelper.TYPE, "Temperature");
-            cv.put(UnitTrandsferSQLiteHelper.FUNCTION, function);
-            db.insert(UnitTrandsferSQLiteHelper.TITLE, null, cv);
+            cv.put(UnitTransferSQLiteHelper.TYPE, "Temperature");
+            cv.put(UnitTransferSQLiteHelper.FUNCTION, function);
+            db.insert(UnitTransferSQLiteHelper.TITLE, null, cv);
 
             db.close();
         }else{
@@ -224,7 +224,7 @@ public class TemperatureActivity extends AppCompatActivity implements View.OnCli
     }
 
     public Cursor GetData(String key) {
-        UnitTrandsferSQLiteHelper helper = new UnitTrandsferSQLiteHelper(this);
+        UnitTransferSQLiteHelper helper = new UnitTransferSQLiteHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
 
         String query = "SELECT * FROM UTransfer WHERE FUNCTION = ?";

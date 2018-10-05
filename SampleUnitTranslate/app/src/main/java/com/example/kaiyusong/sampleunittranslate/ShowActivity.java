@@ -65,7 +65,7 @@ public class ShowActivity extends AppCompatActivity
                         startActivity(new Intent(getApplicationContext(), AreaActivity.class));
                         break;
                     case "V":
-                        startActivity(new Intent(getApplicationContext(), VolumActivity.class));
+                        startActivity(new Intent(getApplicationContext(), VolumeActivity.class));
                         break;
                     case "S":
                         startActivity(new Intent(getApplicationContext(), SpeedActivity.class));
@@ -110,7 +110,7 @@ public class ShowActivity extends AppCompatActivity
     }
 
     public void Show(Cursor cursor){
-        String[] from = new String[]{UnitTrandsferSQLiteHelper.FUNCTION};
+        String[] from = new String[]{UnitTransferSQLiteHelper.FUNCTION};
         int[] to = new int[]{R.id.Eq};
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.list_items, cursor, from, to, 0 );
@@ -119,7 +119,7 @@ public class ShowActivity extends AppCompatActivity
     }
 
     public Cursor GetData() {
-        UnitTrandsferSQLiteHelper helper = new UnitTrandsferSQLiteHelper(this);
+        UnitTransferSQLiteHelper helper = new UnitTransferSQLiteHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
 
         String query = "SELECT * FROM UTransfer WHERE Type = ?";
@@ -130,14 +130,14 @@ public class ShowActivity extends AppCompatActivity
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         cursor.moveToPosition(i);
-        String function = cursor.getString(cursor.getColumnIndex(UnitTrandsferSQLiteHelper.FUNCTION));
+        String function = cursor.getString(cursor.getColumnIndex(UnitTransferSQLiteHelper.FUNCTION));
 
-        UnitTrandsferSQLiteHelper helper = new UnitTrandsferSQLiteHelper(this);
+        UnitTransferSQLiteHelper helper = new UnitTransferSQLiteHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
 
-        String query = UnitTrandsferSQLiteHelper.FUNCTION + " = ?";
+        String query = UnitTransferSQLiteHelper.FUNCTION + " = ?";
         String[] variables = new String[]{function};
-        db.delete(UnitTrandsferSQLiteHelper.TITLE,query,variables);
+        db.delete(UnitTransferSQLiteHelper.TITLE,query,variables);
         db.close();
         cursor = GetData();
         Show(cursor);
